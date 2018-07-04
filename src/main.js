@@ -1,7 +1,7 @@
 /**
  * Created by wuming on 2017/7/11.
  */
-import './utils/antm-viewport.min';
+import './utils/antm-viewport.min'; // 配合webpack配置的pxtorem rootValue: 100使用，将antd-mobile里面的px单位转换成rem单位
 import './assets/css/reset.css';
 import React from 'react';
 import { render } from 'react-dom';

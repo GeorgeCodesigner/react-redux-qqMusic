@@ -4,14 +4,14 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const pxtorem = require('postcss-pxtorem');
+const pxtorem = require('postcss-pxtorem'); // 将css中的px转换成rem
 const postcssOpts = {
     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
     plugins: () => [
         autoprefixer({
             browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
         }),
-        pxtorem({ rootValue: 100, propWhiteList: [] })
+        pxtorem({ rootValue: 100, propWhiteList: [] }) // 基准值100px(iphone6下面)
     ],
 };
 module.exports = {
@@ -23,8 +23,8 @@ module.exports = {
         filename: '[name].[hash].js',
     },
     resolve: {
-        modules: [path.resolve(__dirname, 'node_modules'), path.join(__dirname, 'src')],
-        extensions: ['.web.js', '.jsx', '.js', '.json']
+        modules: [path.resolve(__dirname, 'node_modules'), path.join(__dirname, 'src')], // 解析模块时应该搜索的目录
+        extensions: ['.web.js', '.jsx', '.js', '.json'] // 自动解析确定的扩展
     },
     module: {
         rules: [
@@ -98,7 +98,7 @@ module.exports = {
             template: 'index.html',
             inject: true
         }),
-        //webpack启动后自动打开游览器
+        //webpack启动后自动打开浏览器
         new OpenBrowserPlugin({
             url: 'http://localhost:3000'
         })
