@@ -63,7 +63,6 @@ class Search extends React.Component {
                     songList: isSearch ? response.data.result.songs : _this.state.songList.concat(response.data.result.songs),
                     isSearch: true
                 });
-
             }).catch(function (error) {
                 _this.setState({
                     isCanGet: true,

@@ -1,6 +1,6 @@
 import React from 'react';
 import {List,Switch } from 'antd-mobile';
-import { createForm } from 'rc-form';
+import { createForm } from 'rc-form'; // 配合Switch使用，见antd-mobile官方文档
 import './Slider.scss';
 class Slider extends React.Component {
     constructor(props) {
